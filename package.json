@@ -1,0 +1,22 @@
+{
+  "name": "data-structures-and-algorithms",
+  "author": "Ali Talebi",
+  "version": "1.0.0",
+  "keywords": [
+    "data structures",
+    "algorithms",
+    "typescript"
+  ],
+  "description": "",
+  "license": "MIT",
+  "scripts": {
+    "test": "bun test"
+  },
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
