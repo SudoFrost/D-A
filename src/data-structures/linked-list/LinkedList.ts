@@ -43,23 +43,29 @@ export class LinkedList<T> implements ILinkedList<T> {
     private getNode(index: number): INode<T> | null {
         if (index < 0 || index >= this.size()) return null
 
-        if (this.size() / 2 > index) {
-            let current = this._head;
+        return (this.size() / 2 > index)
+            ? this.getNodeFromHead(index)
+            : this.getNodeFromTail(index)
+    }
 
-            while (index-- > 0 && current) {
-                current = current.next;
-            }
+    private getNodeFromHead(index: number): INode<T> | null {
+        let current = this._head;
 
-            return current
-        } else {
-            let current = this._tail;
-
-            while (++index < this.size() && current) {
-                current = current.prev;
-            }
-
-            return current
+        while (index-- > 0 && current) {
+            current = current.next;
         }
+
+        return current
+    }
+
+    private getNodeFromTail(index: number): INode<T> | null {
+        let current = this._tail;
+
+        while (++index < this.size() && current) {
+            current = current.prev;
+        }
+
+        return current
     }
 
     get(index: number): T | undefined {
