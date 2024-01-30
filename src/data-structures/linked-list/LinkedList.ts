@@ -127,9 +127,9 @@ export class LinkedList<T> implements ILinkedList<T> {
         let current = this._head;
         let index = 0;
         while (current) {
-            if (current.value === search || (search as SearchCallback<T>)(current.value)) {
-                return index
-            }
+            if (current.value === search) return index
+            if (search instanceof Function && search(current.value)) return index
+
             index++;
             current = current.next;
         }
