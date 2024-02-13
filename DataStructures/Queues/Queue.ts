@@ -1,12 +1,4 @@
-export interface IQueue<T> {
-    size(): number;
-    isEmpty(): boolean;
-    enqueue(item: T): void;
-    dequeue(): T | undefined;
-    peek(): T | undefined;
-}
-
-export class Queue<T> implements IQueue<T> {
+export class Queue<T>{
     private _items: T[] = [];
 
     size(): number {

@@ -1,6 +1,4 @@
-import type { IQueue } from './Queue';
-
-export class PriorityQueue<T> implements IQueue<T> {
+export class PriorityQueue<T>  {
     private _items: T[] = [];
 
     constructor(private _compare: (a: T, b: T) => number) { }

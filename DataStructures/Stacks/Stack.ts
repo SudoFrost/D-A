@@ -1,12 +1,4 @@
-export interface IStack<T> {
-    size(): number;
-    isEmpty(): boolean;
-    push(item: T): void;
-    pop(): T | undefined;
-    peek(): T | undefined;
-}
-
-export class Stack<T> implements IStack<T> {
+export class Stack<T> {
     private _items: T[] = [];
 
     public size(): number {

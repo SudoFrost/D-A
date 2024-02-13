@@ -1,27 +1,9 @@
-import type { INode } from "./Node";
 import { Node } from "./Node";
 
 type SearchCallback<T> = ((i: T) => boolean)
-
-export interface ILinkedList<T> {
-    get head(): T | undefined;
-    get tail(): T | undefined;
-
-    size(): number;
-    isEmpty(): boolean;
-    toString(): string;
-    get(index: number): T | undefined;
-    insert(value: T, index: number): void;
-    prepend(value: T): void;
-    append(value: T): void;
-    remove(index: number): void;
-    indexOf(search: T | SearchCallback<T>): number
-    toArray(): T[];
-}
-
-export class LinkedList<T> implements ILinkedList<T> {
-    private _head: INode<T> | null = null;
-    private _tail: INode<T> | null = null;
+export class LinkedList<T> {
+    private _head: Node<T> | null = null;
+    private _tail: Node<T> | null = null;
     private _size: number = 0;
 
     get head(): T | undefined {
@@ -40,7 +22,7 @@ export class LinkedList<T> implements ILinkedList<T> {
         return this.size() === 0;
     }
 
-    private getNode(index: number): INode<T> | null {
+    private getNode(index: number): Node<T> | null {
         if (index < 0 || index >= this.size()) return null
 
         return (this.size() / 2 > index)
@@ -48,7 +30,7 @@ export class LinkedList<T> implements ILinkedList<T> {
             : this.getNodeFromTail(index)
     }
 
-    private getNodeFromHead(index: number): INode<T> | null {
+    private getNodeFromHead(index: number): Node<T> | null {
         let current = this._head;
 
         while (index-- > 0 && current) {
@@ -58,7 +40,7 @@ export class LinkedList<T> implements ILinkedList<T> {
         return current
     }
 
-    private getNodeFromTail(index: number): INode<T> | null {
+    private getNodeFromTail(index: number): Node<T> | null {
         let current = this._tail;
 
         while (++index < this.size() && current) {
