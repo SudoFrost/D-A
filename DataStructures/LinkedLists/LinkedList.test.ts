@@ -1,5 +1,5 @@
 import { test, expect, describe, beforeEach } from 'bun:test';
-import { LinkedList } from '@/data-structures/linked-list/LinkedList';
+import { LinkedList } from './LinkedList';
 
 describe('LinkedList', () => {
     let linkedList: LinkedList<number>;

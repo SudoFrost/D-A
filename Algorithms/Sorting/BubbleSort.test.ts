@@ -1,4 +1,4 @@
-import BubbleSort from "@/algorithms/sort/BubbleSort"
+import BubbleSort from "./BubbleSort"
 import { describe, expect, test } from "bun:test"
 
 describe("BubbleSort", () => {

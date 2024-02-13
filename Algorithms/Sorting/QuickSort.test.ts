@@ -1,4 +1,4 @@
-import QuickSort from "@/algorithms/sort/QuickSort"
+import QuickSort from "./QuickSort"
 
 import { describe, expect, test } from "bun:test"
 

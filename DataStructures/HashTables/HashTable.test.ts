@@ -1,4 +1,4 @@
-import { HashTable } from '@/data-structures/hash-tables/HashTable';
+import { HashTable } from './HashTable';
 import { describe, expect, test } from 'bun:test';
 
 describe('HashTable', () => {

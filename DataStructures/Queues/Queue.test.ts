@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import { Queue } from "@/data-structures/queue/Queue"
+import { Queue } from "./Queue"
 
 test('enqueue adds item to back of queue', () => {
     const queue = new Queue();

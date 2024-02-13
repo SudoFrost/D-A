@@ -24,11 +24,8 @@
         "noPropertyAccessFromIndexSignature": true,
         "paths": {
             "@/*": [
-                "./src/*"
+                "./*"
             ],
-            "@tests/*": [
-                "./tests/*"
-            ]
         },
         "types": [
             "bun-types"

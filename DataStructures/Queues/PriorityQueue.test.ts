@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test';
-import { PriorityQueue } from '@/data-structures/queue/PriorityQueue';
+import { PriorityQueue } from './PriorityQueue';
 
 
 class Notification {

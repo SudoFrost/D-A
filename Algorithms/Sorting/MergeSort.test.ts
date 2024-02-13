@@ -1,4 +1,4 @@
-import MergeSort from "@/algorithms/sort/MergeSort"
+import MergeSort from "./MergeSort"
 
 import { describe, expect, test } from "bun:test"
 

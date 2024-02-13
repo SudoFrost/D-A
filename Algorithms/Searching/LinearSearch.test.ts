@@ -1,5 +1,5 @@
 import { test, expect, describe } from 'bun:test';
-import LinearSearch from '@/algorithms/search/LinearSearch';
+import LinearSearch from './LinearSearch';
 
 describe('LinearSearch', () => {
     describe("Search with element", () => {

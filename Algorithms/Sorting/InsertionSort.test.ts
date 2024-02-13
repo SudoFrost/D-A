@@ -1,4 +1,4 @@
-import InsertionSort from "@/algorithms/sort/InsertionSort"
+import InsertionSort from "./InsertionSort"
 import { describe, expect, test } from "bun:test"
 
 describe("InsertionSort", () => {

@@ -1,4 +1,4 @@
-import { LinkedList } from '@/data-structures/linked-list/LinkedList';
+import { LinkedList } from '../LinkedLists/LinkedList';
 
 export class HashTable<TKey extends number | string, TValue> {
     private static capability = 10

@@ -1,6 +1,6 @@
 import { describe, test, expect } from "bun:test"
 
-import { BinarySearch } from "@/algorithms/search/BinarySearch"
+import { BinarySearch } from "./BinarySearch"
 
 describe("Binary Search", () => {
     test("Should return the index of the target", () => {

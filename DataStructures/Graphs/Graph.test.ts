@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import Graph from '@/data-structures/graph/Graph';
+import Graph from './Graph';
 
 describe('Graph', () => {
     it('should add nodes and edges', () => {

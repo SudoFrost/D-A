@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import { Stack } from '@/data-structures/stack/Stack'
+import { Stack } from './Stack'
 
 test('pop removes item from top of stack', () => {
     const stack = new Stack();

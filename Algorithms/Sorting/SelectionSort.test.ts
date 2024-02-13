@@ -1,4 +1,4 @@
-import SelectionSort from "@/algorithms/sort/SelectionSort"
+import SelectionSort from "./SelectionSort"
 import { describe, expect, test } from "bun:test"
 
 describe("SelectionSort", () => {

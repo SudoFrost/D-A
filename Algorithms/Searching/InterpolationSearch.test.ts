@@ -1,6 +1,6 @@
 import { describe, test, expect } from "bun:test"
 
-import InterpolationSearch from "@/algorithms/search/InterpolationSearch"
+import InterpolationSearch from "./InterpolationSearch"
 
 describe("Interpolation Search", () => {
     test("Should return the index of the target", () => {
