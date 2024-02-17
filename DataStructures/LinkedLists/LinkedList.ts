@@ -1,6 +1,21 @@
-import { Node } from "./Node";
+class Node<T> {
+    public value: T;
+    public next: Node<T> | null;
+    public prev: Node<T> | null;
+
+    constructor(value: T) {
+        this.value = value;
+        this.next = null;
+        this.prev = null;
+    }
+
+    public static create<T>(value: T): Node<T> {
+        return new Node<T>(value);
+    }
+}
 
 type SearchCallback<T> = ((i: T) => boolean)
+
 export class LinkedList<T> {
     private _head: Node<T> | null = null;
     private _tail: Node<T> | null = null;
