@@ -1,10 +1,12 @@
+import { LinkedList } from "../LinkedLists/LinkedList";
+
 export class PriorityQueue<T>  {
-    private _items: T[] = [];
+    private list: LinkedList<T> = new LinkedList();
 
     constructor(private _compare: (a: T, b: T) => number) { }
 
     size(): number {
-        return this._items.length
+        return this.list.size()
     }
     isEmpty(): boolean {
         return this.size() === 0
@@ -12,20 +14,22 @@ export class PriorityQueue<T>  {
 
     enqueue(item: T): void {
         // Find the index of the first item that has lower priority of the enqueue item
-        let insertionIndex = this._items.findIndex(i => this._compare(item, i) > 0)
+        let insertionIndex = this.list.indexOf(i => this._compare(item, i) > 0)
 
         // if no item has lower priority, insert the item at the end of the queue.
         if (insertionIndex === -1) {
             insertionIndex = this.size()
         }
 
-        this._items.splice(insertionIndex, 0, item)
+        this.list.insert(item, insertionIndex)
     }
 
     dequeue(): T | undefined {
-        return this._items.shift()
+        const item = this.list.get(0)
+        this.list.remove(0)
+        return item
     }
     peek(): T | undefined {
-        return this._items[0]
+        return this.list.get(0)
     }
 }

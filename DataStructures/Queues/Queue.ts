@@ -1,8 +1,9 @@
+import { LinkedList } from "../LinkedLists/LinkedList";
 export class Queue<T>{
-    private _items: T[] = [];
+    private list: LinkedList<T> = new LinkedList();
 
     size(): number {
-        return this._items.length;
+        return this.list.size();
     }
 
     isEmpty(): boolean {
@@ -10,14 +11,16 @@ export class Queue<T>{
     }
 
     enqueue(item: T): void {
-        this._items.push(item);
+        this.list.append(item);
     }
 
     dequeue(): T | undefined {
-        return this._items.shift();
+        const item = this.list.get(0);
+        this.list.remove(0)
+        return item;
     }
 
     peek(): T | undefined {
-        return this._items[0];
+        return this.list.get(0);
     }
 }
