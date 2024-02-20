@@ -1,7 +1,6 @@
+import type { CompareFunc } from "@/Utils/Comparator"
 
-export type Compare<T> = (a: T, b: T) => number
-
-export function BinarySearch<T>(arr: T[], target: T, { compare }: { compare?: Compare<T> } = {}): number {
+export function BinarySearch<T>(arr: T[], target: T, { compare }: { compare?: CompareFunc<T> } = {}): number {
     let left = 0
     let right = arr.length - 1
     let mid = Math.floor(right / 2)

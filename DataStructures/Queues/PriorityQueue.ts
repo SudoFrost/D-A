@@ -1,9 +1,10 @@
+import type { CompareFunc } from "@/Utils/Comparator";
 import { LinkedList } from "../LinkedLists/LinkedList";
 
 export class PriorityQueue<T>  {
     private list: LinkedList<T> = new LinkedList();
 
-    constructor(private _compare: (a: T, b: T) => number) { }
+    constructor(private _cmp: CompareFunc<T>) { }
 
     size(): number {
         return this.list.size()
@@ -14,7 +15,7 @@ export class PriorityQueue<T>  {
 
     enqueue(item: T): void {
         // Find the index of the first item that has lower priority of the enqueue item
-        let insertionIndex = this.list.indexOf(i => this._compare(item, i) > 0)
+        let insertionIndex = this.list.indexOf(i => this._cmp(item, i) > 0)
 
         // if no item has lower priority, insert the item at the end of the queue.
         if (insertionIndex === -1) {
