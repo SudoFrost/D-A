@@ -1,7 +1,7 @@
-export type Comparator<T> = (a: T, b: T) => number
+import { Comparator, type CompareFunc } from "@/Utils/Comparator"
 
-export default function BubbleSort<T>(arr: T[], compare?: Comparator<T>): T[] {
-    compare ??= (a, b) => a == b ? 0 : a > b ? 1 : -1
+export default function BubbleSort<T>(arr: T[], compare?: CompareFunc<T>): T[] {
+    compare ??= new Comparator(compare).cmp
 
     for (let i = 0; i < arr.length; i++) {
         let swap = false

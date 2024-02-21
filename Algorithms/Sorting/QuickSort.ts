@@ -1,7 +1,7 @@
-export type Comparator<T> = (a: T, b: T) => number
+import { Comparator, type CompareFunc } from "@/Utils/Comparator"
 
-export default function QuickSort<T>(arr: T[], compare?: Comparator<T>, left?: number, right?: number): T[] {
-    compare ??= (a, b) => a == b ? 0 : a > b ? 1 : -1
+export default function QuickSort<T>(arr: T[], compare?: CompareFunc<T>, left?: number, right?: number): T[] {
+    compare ??= new Comparator(compare).cmp
 
     if (left === undefined || right === undefined) {
         left = 0

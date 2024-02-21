@@ -1,8 +1,7 @@
+import { Comparator, type CompareFunc } from "@/Utils/Comparator"
 
-export type Comparator<T> = (a: T, b: T) => number
-
-export default function MergeSort<T>(arr: T[], compare?: Comparator<T>): T[] {
-    compare ??= (a, b) => a == b ? 0 : a > b ? 1 : -1
+export default function MergeSort<T>(arr: T[], compare?: CompareFunc<T>): T[] {
+    compare ??= new Comparator(compare).cmp
 
     let root = Math.ceil(Math.sqrt(arr.length))
     let i = 0

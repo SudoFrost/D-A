@@ -1,10 +1,10 @@
-import type { CompareFunc } from "@/Utils/Comparator";
+import { Comparator, type CompareFunc } from "@/Utils/Comparator";
 import { LinkedList } from "../LinkedLists/LinkedList";
 
 export class PriorityQueue<T>  {
     private list: LinkedList<T> = new LinkedList();
 
-    constructor(private _cmp: CompareFunc<T>) { }
+    constructor(private _cmp: CompareFunc<T> = new Comparator().cmp) { }
 
     size(): number {
         return this.list.size()

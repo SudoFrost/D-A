@@ -1,7 +1,7 @@
-export type Comparator<T> = (a: T, b: T) => number
+import { Comparator, type CompareFunc } from "@/Utils/Comparator"
 
-export default function InsertionSort<T>(arr: T[], compare?: Comparator<T>): T[] {
-    compare ??= (a, b) => a == b ? 0 : a > b ? 1 : -1
+export default function InsertionSort<T>(arr: T[], compare?: CompareFunc<T>): T[] {
+    compare ??= new Comparator(compare).cmp
 
     for (let i = 1; i < arr.length; i++) {
         const tmp = arr[i]
